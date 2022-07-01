@@ -60,8 +60,13 @@ int main()
     cin >> age;
     if (age >= 18)
     {
-        cout << "Welcome to p..n hub";
+        cout << "Welcome to p..n hub\n";
     }
+    else if (age < 0)
+    {
+        cout << "you have not been born yet !!!\n";
+    }
+
     else
     {
         cout << "get the fuck out ! \n";
