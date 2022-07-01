@@ -27,6 +27,23 @@ void printOutInfo(const str_t name, const int age);
 
 int globalVariable = 99;
 
+struct Human
+{
+    int age;
+    double weight;
+    double height;
+    bool isMale;
+};
+
+void humanPrinter(Human &human);
+
+//! function templates (generic programming)
+template <typename T, typename U>
+auto max(T x, U y)
+{
+    return (x > y) ? x : y;
+}
+
 int main()
 {
     using std::cin;
@@ -148,6 +165,39 @@ int main()
     cout << "str_1 = " << str_1 << "  str_2 = " << str_2 << '\n';
 
     printOutInfo(name, age);
+
+    //! Real stuff
+
+    int *pNum = NULL;
+    pNum = new int; // allocates memory
+    *pNum = 21;
+    cout << "address: " << pNum << '\n';
+    cout << "value: " << *pNum << '\n';
+    delete pNum; // deallocate memory
+
+    char *pGrades = NULL;
+    int size;
+    cout << "how many grades to enter : \n";
+    cin >> size;
+    pGrades = new char[size]; // allocate
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Enter Grade #" << i + 1 << ": ";
+        cin >> pGrades[i];
+    }
+    for (int i = 0; i < size; i++)
+    {
+        cout << pGrades[i] << " ";
+    }
+    delete[] pGrades; // deallocate
+
+    max(19, 22.2);
+
+    Human jeff;
+    jeff.age = 33;
+    jeff.height = 5.9;
+    jeff.weight = 100;
+    jeff.isMale = true;
 }
 
 void HappyBirthday()
@@ -178,4 +228,12 @@ void printOutInfo(const str_t name, const int age)
     // name = "shit"; not allowed
     // age = 22; not allowed
     std::cout << "name = " << name << "  age = " << age << std::endl;
+}
+
+void humanPrinter(Human &human)
+{
+    std::cout << human.age << std::endl;
+    std::cout << human.weight << std::endl;
+    std::cout << human.isMale << std::endl;
+    std::cout << human.height << std::endl;
 }
