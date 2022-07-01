@@ -22,6 +22,8 @@ namespace math
 void HappyBirthday();
 void HappyBirthday(str_t name);
 void HappyBirthday(str_t name, int age);
+void swap(str_t &str_1, str_t &str_2);
+void printOutInfo(const str_t name, const int age);
 
 int globalVariable = 99;
 
@@ -130,17 +132,50 @@ int main()
     {
         cout << element << "\n";
     }
+
+    int arr_2D[][3] = {{1, 2, 3},
+                       {4, 5, 6},
+                       {7, 8, 9}};
+
+    int val = 1;
+    int *ref_to_val = &val;
+    cout << &val << '\n';
+    cout << *ref_to_val << '\n';
+
+    str_t str_1 = "Water";
+    str_t str_2 = "cool-aid";
+    swap(str_1, str_2);
+    cout << "str_1 = " << str_1 << "  str_2 = " << str_2 << '\n';
+
+    printOutInfo(name, age);
 }
 
 void HappyBirthday()
 {
     std::cout << "Happy birthday to you mr.president \n";
 }
+
 void HappyBirthday(str_t name)
 {
     std::cout << "Happy birthday to you " << name << '\n';
 }
+
 void HappyBirthday(str_t name, int age)
 {
     std::cout << "Happy birthday to you " << name << age << '\n';
+}
+
+void swap(str_t &str_1, str_t &str_2)
+{
+
+    str_t temp = str_1;
+    str_1 = str_2;
+    str_2 = temp;
+}
+
+void printOutInfo(const str_t name, const int age)
+{
+    // name = "shit"; not allowed
+    // age = 22; not allowed
+    std::cout << "name = " << name << "  age = " << age << std::endl;
 }
