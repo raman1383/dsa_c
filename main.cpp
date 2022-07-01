@@ -97,13 +97,20 @@ int main()
     srand(time(NULL));
     cout << (rand() % 6) + 1 << '\n';
 
+    HappyBirthday();
     HappyBirthday(name);
-    HappyBirthday(name);
-    HappyBirthday(name);
+    HappyBirthday(name, age);
 }
 
-void HappyBirthday(str_t name)
+void HappyBirthday()
 {
     std::cout << "Happy birthday to you mr.president \n";
+}
+void HappyBirthday(str_t name)
+{
     std::cout << "Happy birthday to you " << name << '\n';
+}
+void HappyBirthday(str_t name, int age)
+{
+    std::cout << "Happy birthday to you " << name << age << '\n';
 }
