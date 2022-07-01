@@ -44,6 +44,45 @@ auto max(T x, U y)
     return (x > y) ? x : y;
 }
 
+enum status
+{
+    success,
+    failure,
+};
+
+class Dog
+{
+private:
+    /* data */
+public:
+    str_t name;
+    str_t breed;
+    int age;
+
+    void eat()
+    {
+        std::cout << "Dog is eating \n";
+    }
+    void drink()
+    {
+        std::cout << "Dog is drinking \n";
+    }
+    void sleep()
+    {
+        std::cout << "Dog is sleeping \n";
+    }
+    Dog(/* args */);
+    ~Dog();
+};
+
+Dog::Dog(/* args */)
+{
+}
+
+Dog::~Dog()
+{
+}
+
 int main()
 {
     using std::cin;
@@ -198,6 +237,9 @@ int main()
     jeff.height = 5.9;
     jeff.weight = 100;
     jeff.isMale = true;
+
+    status sender = failure;
+    (sender == failure) ? cout << "Shit! \n" : cout << "Yes!\n";
 }
 
 void HappyBirthday()
