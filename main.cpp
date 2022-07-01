@@ -66,9 +66,28 @@ int main()
     {
         cout << "you have not been born yet !!!\n";
     }
-
     else
     {
         cout << "get the fuck out ! \n";
     }
+
+    int month;
+    cout << "Enter a num 1 to 12 : \n";
+    cin >> month;
+    switch (month)
+    {
+    case 1:
+        cout << "its january\n";
+        break;
+
+    default:
+        cout << "do not care ! \n";
+        break;
+    }
+
+    age >= 18 ? cout << "old enough\n" : cout << "not old enough\n";
+    cout << (age >= 18 ? "old enough \n" : "not old enough\n");
+
+    bool zero = false;
+    bool one = true;
 }
