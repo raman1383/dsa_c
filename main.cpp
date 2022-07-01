@@ -71,17 +71,24 @@ public:
     {
         std::cout << "Dog is sleeping \n";
     }
-    Dog(/* args */);
+
+    // can overload
+    Dog(std::string name, str_t breed, int age)
+    {
+        this->age = age;
+        this->breed = breed;
+        this->name = name;
+    };
     ~Dog();
 };
 
-Dog::Dog(/* args */)
-{
-}
+// Dog::Dog(/* args */)
+// {
+// }
 
-Dog::~Dog()
-{
-}
+// Dog::~Dog()
+// {
+// }
 
 int main()
 {
@@ -240,6 +247,8 @@ int main()
 
     status sender = failure;
     (sender == failure) ? cout << "Shit! \n" : cout << "Yes!\n";
+
+    Dog sco("Scooby", "german", 12);
 }
 
 void HappyBirthday()
