@@ -2,9 +2,12 @@
 
 int main()
 {
-    std::cout << " Hello world \n";
+    const double PI = 3.14159;
+    const double LIGHT_SPEED = 299792458;
 
-    bool dead = true;
+    double radius = 10;
 
-    std::string name = "Raman";
+    double cir = 2 * PI * radius;
+
+    std::cout << " -> " << cir << '\n';
 }
