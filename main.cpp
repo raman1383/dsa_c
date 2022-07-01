@@ -53,5 +53,17 @@ int main()
     cout << "Enter side b : \n";
     cin >> math::b;
     math::c = std::sqrt(std::pow(math::a, 2) + std::pow(math::b, 2));
-    cout << "Side c of triangle : " << math::c;
+    cout << "Side c of triangle : " << math::c << '\n';
+
+    int age;
+    cout << "Enter age : \n";
+    cin >> age;
+    if (age >= 18)
+    {
+        cout << "Welcome to p..n hub";
+    }
+    else
+    {
+        cout << "get the fuck out ! \n";
+    }
 }
