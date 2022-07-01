@@ -19,7 +19,11 @@ namespace math
     double a, b, c;
 } // namespace math
 
+void HappyBirthday();
 void HappyBirthday(str_t name);
+void HappyBirthday(str_t name, int age);
+
+int globalVariable = 99;
 
 int main()
 {
@@ -97,9 +101,35 @@ int main()
     srand(time(NULL));
     cout << (rand() % 6) + 1 << '\n';
 
+    // overloaded function
     HappyBirthday();
     HappyBirthday(name);
     HappyBirthday(name, age);
+
+    int globalVariable = 98;
+    cout << globalVariable << " , " << ::globalVariable << '\n'; // 98  , 99
+
+    str_t cars[] = {"Tesla", "BMW", "Benz"};
+    cout << cars[0] << "\n";
+
+    str_t cars_2[3];
+    cars_2[0] = "Tesla";
+    cars_2[1] = "BMW";
+    cars_2[2] = "Benz";
+
+    for (str_t car : cars)
+    {
+        cout << car << '\n';
+    }
+
+    str_t arr[9];
+    fill(arr, arr + (9 / 3), "pizza");
+    fill(arr + (9 / 3), arr + (9 / 3) * 2, "burger");
+    fill(arr + (9 / 3) * 2, arr + 9, "hotdog");
+    for (str_t element : arr)
+    {
+        cout << element << "\n";
+    }
 }
 
 void HappyBirthday()
