@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <ctime>
 
 using str_t = std::string;
 
@@ -17,6 +18,8 @@ namespace math
 
     double a, b, c;
 } // namespace math
+
+void HappyBirthday(str_t name);
 
 int main()
 {
@@ -90,4 +93,17 @@ int main()
 
     bool zero = false;
     bool one = true;
+
+    srand(time(NULL));
+    cout << (rand() % 6) + 1 << '\n';
+
+    HappyBirthday(name);
+    HappyBirthday(name);
+    HappyBirthday(name);
+}
+
+void HappyBirthday(str_t name)
+{
+    std::cout << "Happy birthday to you mr.president \n";
+    std::cout << "Happy birthday to you " << name << '\n';
 }
