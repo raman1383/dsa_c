@@ -53,10 +53,11 @@ enum status
 class Dog
 {
 private:
-    /* data */
+    int secretChilds;
+
 public:
     str_t name;
-    str_t breed;
+    str_t breed = "German";
     int age;
 
     void eat()
@@ -72,23 +73,41 @@ public:
         std::cout << "Dog is sleeping \n";
     }
 
-    // can overload
-    Dog(std::string name, str_t breed, int age)
+    // getter
+    int getSecretChilds()
     {
-        this->age = age;
-        this->breed = breed;
-        this->name = name;
-    };
-    ~Dog();
+        return secretChilds;
+    }
+
+    // setter
+    void setSecretChilds(int secretChilds)
+    {
+        if (secretChilds == 10)
+        {
+            this->secretChilds = secretChilds;
+        }
+    }
+
+    // can overload
+    // Dog(std::string name, str_t breed, int age)
+    // {
+    //     this->age = age;
+    //     this->breed = breed;
+    //     this->name = name;
+    // };
+    // ~Dog();
 };
 
-// Dog::Dog(/* args */)
-// {
-// }
+class Doberman : public Dog
+{
 
-// Dog::~Dog()
-// {
-// }
+public:
+    // int age;
+    // Doberman(int age)
+    // {
+    //     this->age = age;
+    // }
+};
 
 int main()
 {
@@ -248,7 +267,11 @@ int main()
     status sender = failure;
     (sender == failure) ? cout << "Shit! \n" : cout << "Yes!\n";
 
-    Dog sco("Scooby", "german", 12);
+    // Dog sco("Scy", "German", 12);
+    // sco.setSecretChilds(10);
+
+    Doberman mans;
+    mans.eat();
 }
 
 void HappyBirthday()
